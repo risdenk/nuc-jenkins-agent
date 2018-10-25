@@ -11,6 +11,8 @@ RUN curl -fsSLO https://download.docker.com/linux/static/stable/x86_64/docker-${
 ENV DOCKERCOMPOSE_VERSION=1.22.0
 RUN curl -L https://github.com/docker/compose/releases/download/${DOCKERCOMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
 
+RUN groupadd -g 999 docker && usermod -aG docker jenkins
+
 USER jenkins
 
 COPY mvn-settings.xml /home/jenkins/.m2/settings.xml
