@@ -14,6 +14,7 @@ RUN curl -L https://github.com/docker/compose/releases/download/${DOCKERCOMPOSE_
 RUN groupadd -g 999 docker && usermod -aG docker jenkins
 
 COPY mvn-settings.xml /home/jenkins/.m2/settings.xml
-RUN chown -R jenkins:jenkins /home/jenkins/.m2
+COPY ivy-settings.xml /home/jenkins/.ivy2/ivysettings.xml
+RUN chown -R jenkins:jenkins /home/jenkins/.m2 /home/jenkins/.ivy2
 
 USER jenkins
