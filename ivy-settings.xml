@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivysettings>
+  <settings defaultResolver="nexus"/>
+  <resolvers>
+      <ibiblio name="nexus" m2compatible="true" root="http://nuc:8081/repository/maven-public/"/>
+    </resolvers>
+</ivysettings>
