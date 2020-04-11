@@ -1,4 +1,4 @@
-FROM jenkinsci/slave
+FROM jenkins/slave
 
 USER root
 
