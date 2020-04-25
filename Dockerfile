@@ -2,6 +2,10 @@ FROM jenkins/agent:latest-jdk11
 
 USER root
 
+RUN apt-get update && apt-get install -y \
+    python3 \
+ && rm -rf /var/lib/apt/lists/*
+
 ENV DOCKERVERSION=19.03.8
 RUN curl -fsSLO https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKERVERSION}.tgz \
   && tar xzvf docker-${DOCKERVERSION}.tgz --strip 1 \
